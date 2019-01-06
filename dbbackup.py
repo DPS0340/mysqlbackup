@@ -26,14 +26,14 @@ import pickle
 
 # MySQL database details to which backup to be done. Make sure below user having enough privileges to take databases backup.
 # To take multiple databases backup, create any file like /backup/dbnames.txt and put databases names one on each line and assigned to DB_NAME variable.
-if __name__ == "__main__":
+def main():
     with open("./settings", "rb") as r:
         dump = pickle.load(r)
     DB_HOST = dump["DB_HOST"]
     DB_USER = dump["DB_USER"]
     DB_USER_PASSWORD = dump["DB_USER_PASSWORD"]
     DB_NAME = dump["DB_NAME"]
-    BACKUP_PATH = '../backup'
+    BACKUP_PATH = './backup'
 
     # Getting current DateTime to create the separate backup folder like "20180817-123433".
     DATETIME = time.strftime('%Y%m%d-%H%M%S')
