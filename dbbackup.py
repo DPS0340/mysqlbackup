@@ -85,4 +85,4 @@ def main():
     print ("")
     print ("Backup script completed")
     print ("Your backups have been created in '" + TODAYBACKUPPATH + "' directory")
-    return TODAYBACKUPPATH, datetime
+    return TODAYBACKUPPATH, DATETIME
