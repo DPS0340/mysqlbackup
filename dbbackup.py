@@ -59,27 +59,27 @@ if __name__ == "__main__":
 
     # Starting actual database backup process.
     if multi:
-    in_file = open(DB_NAME,"r")
-    flength = len(in_file.readlines())
-    in_file.close()
-    p = 1
-    dbfile = open(DB_NAME,"r")
+        in_file = open(DB_NAME,"r")
+        flength = len(in_file.readlines())
+        in_file.close()
+        p = 1
+        dbfile = open(DB_NAME,"r")
 
-    while p <= flength:
-        db = dbfile.readline()   # reading database name from file
-        db = db[:-1]         # deletes extra line
+        while p <= flength:
+            db = dbfile.readline()   # reading database name from file
+            db = db[:-1]         # deletes extra line
+            dumpcmd = "mysqldump -h " + DB_HOST + " -u " + DB_USER + " -p" + DB_USER_PASSWORD + " " + db + " > " + pipes.quote(TODAYBACKUPPATH) + "/" + db + ".sql"
+            os.system(dumpcmd)
+            gzipcmd = "gzip " + pipes.quote(TODAYBACKUPPATH) + "/" + db + ".sql"
+            os.system(gzipcmd)
+            p = p + 1
+        dbfile.close()
+    else:
+        db = DB_NAME
         dumpcmd = "mysqldump -h " + DB_HOST + " -u " + DB_USER + " -p" + DB_USER_PASSWORD + " " + db + " > " + pipes.quote(TODAYBACKUPPATH) + "/" + db + ".sql"
         os.system(dumpcmd)
         gzipcmd = "gzip " + pipes.quote(TODAYBACKUPPATH) + "/" + db + ".sql"
         os.system(gzipcmd)
-        p = p + 1
-    dbfile.close()
-    else:
-    db = DB_NAME
-    dumpcmd = "mysqldump -h " + DB_HOST + " -u " + DB_USER + " -p" + DB_USER_PASSWORD + " " + db + " > " + pipes.quote(TODAYBACKUPPATH) + "/" + db + ".sql"
-    os.system(dumpcmd)
-    gzipcmd = "gzip " + pipes.quote(TODAYBACKUPPATH) + "/" + db + ".sql"
-    os.system(gzipcmd)
 
     print ("")
     print ("Backup script completed")
