@@ -33,7 +33,7 @@ if __name__ == "__main__":
     DB_USER = dump["DB_USER"]
     DB_USER_PASSWORD = dump["DB_USER_PASSWORD"]
     DB_NAME = dump["DB_NAME"]
-    BACKUP_PATH = './backup'
+    BACKUP_PATH = '../backup'
 
     # Getting current DateTime to create the separate backup folder like "20180817-123433".
     DATETIME = time.strftime('%Y%m%d-%H%M%S')
