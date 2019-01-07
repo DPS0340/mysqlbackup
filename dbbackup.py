@@ -34,7 +34,7 @@ def main():
     DB_USER = dump["DB_USER"]
     DB_USER_PASSWORD = re.escape(dump["DB_USER_PASSWORD"])
     DB_NAME = dump["DB_NAME"]
-    BACKUP_PATH = './backup'
+    BACKUP_PATH = os.path.dirname(os.path.realpath(__file__)) + '/backup'
 
     # Getting current DateTime to create the separate backup folder like "20180817-123433".
     DATETIME = time.strftime('%Y%m%d-%H%M%S')
