@@ -28,7 +28,7 @@ import re
 # MySQL database details to which backup to be done. Make sure below user having enough privileges to take databases backup.
 # To take multiple databases backup, create any file like /backup/dbnames.txt and put databases names one on each line and assigned to DB_NAME variable.
 def main():
-    with open("./settings", "rb") as r:
+    with open(os.path.dirname(os.path.realpath(__file__)) + "/settings", "rb") as r:
         dump = pickle.load(r)
     DB_HOST = dump["DB_HOST"]
     DB_USER = dump["DB_USER"]
