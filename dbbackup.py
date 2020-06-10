@@ -86,3 +86,7 @@ def main():
     print ("Backup script completed")
     print ("Your backups have been created in '" + TODAYBACKUPPATH + "' directory")
     return TODAYBACKUPPATH, DATETIME
+
+
+if __name__ == "__main__":
+    main()
