@@ -56,7 +56,7 @@ echo "$backup_command"
 echo "$gzipcmd"
 
 # 커맨드 실행
-eval backup_command
-eval gzip
+eval $backup_command
+eval $gzipcmd
 
 echo "done!"
