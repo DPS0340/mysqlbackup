@@ -14,6 +14,13 @@
 script_dir=$(cd $(dirname "$0"); pwd)
 backup_path="$script_dir/backup"
 
+# 현재 시간을 포매팅하여 저장
+# 백업 폴더 이름으로 사용됨
+now=$(date +'%Y%m%d-%H%M%S')
+
+# 백업 폴더 경로 작성
+today_backup_path="$backup_path/$now"
+
 # 환경 변수 상태 출력
 echo "Checking Variables..."
 echo ""
@@ -25,13 +32,30 @@ echo "directory of script file: $script_dir"
 echo "backup folder: $backup_path"
 echo ""
 
-
+# 변수들이 설정되어있는지 체크
 # DB_USER_PASSWORD는 공백도 가능해야하므로 체크하지 않음
 if [ -z "$DB_HOST" ] || [ -z "$DB_USER" ] || [ -z "$DB_NAME" ]
 then
+# 오류 메시지 출력
 echo "At least one of variables(DB_HOST, DB_USER, DB_NAME) is unset.";
 echo "Please retry after export some environment variables."
+# 프로그램 종료
 exit 1
 fi
+
+# 백업 폴더가 없다면 새로 생성
+mkdir -p $today_backup_path
+
+# 백업, 압축 커맨드 작성
+backup_command="mysqldump -h $DB_HOST -u $DB_USER -p '$DB_USER_PASSWORD' $DB_NAME > $today_backup_path/db.sql"
+gzipcmd = "gzip $today_backup_path/db.sql"
+
+# 커맨드 출력
+echo "$backup_command"
+echo "$gzipcmd"
+
+# 커맨드 실행
+eval backup_command
+eval gzip
 
 echo "done!"
