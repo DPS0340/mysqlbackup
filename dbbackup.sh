@@ -1,11 +1,11 @@
 #!/bin/bash
 
-# 오픈소스 파이썬 스크립트를 이지호가 포크 후 2019년 1월에 수정하였음
+# Rahul Kumar의 오픈소스 파이썬 스크립트를 이지호가 포크 후 2019년 1월에 수정하였음
 # 그 후 2020년 6월에 bash 스크립트로 컨버전하였다
 
 # github 레포지토리
-# 원본: https://github.com/tecrahul/python-mysql-backup
-# 포크: https://github.com/DPS0340/mysqlbackup/tree/bash-script
+# 원본(Rahul Kumar): https://github.com/tecrahul/python-mysql-backup
+# 포크(jiho lee): https://github.com/DPS0340/mysqlbackup/tree/bash-script
 
 # 스크립트 파일의 디렉토리 저장
 script_dir=$(cd $(dirname "$0"); pwd)
