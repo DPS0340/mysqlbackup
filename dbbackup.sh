@@ -50,7 +50,8 @@ mkdir -p $today_backup_path
 # 백업, 압축 커맨드 작성
 backup_command=""
 # 패스워드가 공백이라면 사용하지 않음
-if [ -z "$DB_USER_PASSWORD" ] then
+if [ -z "$DB_USER_PASSWORD" ]
+then
 backup_command="mysqldump -h $DB_HOST -u $DB_USER --databases $DB_NAME > $today_backup_path/db.sql"
 else
 backup_command="mysqldump -h $DB_HOST -u $DB_USER -p $DB_USER_PASSWORD --databases $DB_NAME > $today_backup_path/db.sql"
