@@ -1,2 +1,3 @@
-# python-mysql-backup
-Python scripts for MySQL database backup.
+# mysqlbackup-bash Branch
+
+Bash script for backup mysql on linux environment.
