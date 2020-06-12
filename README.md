@@ -1,3 +1,3 @@
-# mysqlbackup-bash Branch
+# mysqlbackup
 
-Bash script for backup mysql on linux environment.
+Bash|python script for backup mysql on linux environment.
