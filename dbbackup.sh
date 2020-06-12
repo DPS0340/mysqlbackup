@@ -56,7 +56,7 @@ backup_command="mysqldump -h $DB_HOST -u $DB_USER --databases $DB_NAME > $today_
 else
 backup_command="mysqldump -h $DB_HOST -u $DB_USER -p $DB_USER_PASSWORD --databases $DB_NAME > $today_backup_path/db.sql"
 fi
-gzipcmd = "gzip $today_backup_path/db.sql"
+gzipcmd="gzip $today_backup_path/db.sql"
 
 # 커맨드 출력
 echo "$backup_command"
