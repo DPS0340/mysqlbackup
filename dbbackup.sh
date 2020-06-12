@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Rahul Kumar의 오픈소스 파이썬 스크립트를 이지호가 포크 후 2019년 1월에 수정하였음
-# 그 후 2020년 6월에 bash 스크립트로 컨버전하였다
+# 그 후 2020년 6월에 bash 스크립트로 컨버전하였다 - 유닉스기초 3차과제 발표 코드 용도로 작성
 
 # github 레포지토리
 # 원본(Rahul Kumar): https://github.com/tecrahul/python-mysql-backup
