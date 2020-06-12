@@ -8,7 +8,7 @@
 
 # github 레포지토리
 # 원본(Rahul Kumar): https://github.com/tecrahul/python-mysql-backup
-# 포크(jiho lee): https://github.com/DPS0340/mysqlbackup/tree/bash-script
+# 포크(jiho lee): https://github.com/DPS0340/mysqlbackup
 
 # 스크립트 파일의 디렉토리 저장
 script_dir=$(cd $(dirname "$0"); pwd)
